@@ -3,34 +3,51 @@
 <head>
   <meta charset="utf-8">
     <script src="../assets/aframe/aframe-v1.2.0.min.js"></script>
+    <script src="../assets/arjs/aframe-ar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- color library css https://github.com/bebraw/colorjoe -->
+  <link rel="stylesheet" href="css/colorjoe.css">
   </head>
   <body>
-    <a-scene>
+
+    <div>
+      <canvas
+        id="draw-area"
+        width="400px"
+        height="400px"
+        style="border: 1px solid #000000;"></canvas>
+      <!-- color palet -->
+      <span id="color-palette"></span>
+    </div>
+    <div>
+      <button id="clear-button">Löschen</button>
+    </div>
+    <div>
+      <button id="eraser-button">Radiergummis</button>
+    </div>
+    <!-- color library https://github.com/bebraw/colorjoe -->
+    <script src="./js/colorjoe.min.js"></script>
+    <script src="./js/main.js"></script>
+
+
+    <a-scene embedded arjs>
       <!-- Best practice. Preloading assets. -->
       <a-assets timeout="3000">
         <a-asset-item id="gltf-cube" src="../assets/gltf/cube.gltf"></a-asset-item>
         <img id="marker-image" src="../assets/images/marker.png">
-        <video id="atomic-video" autoplay loop="true" src="../assets/images/atomic.mp4"></video>
+        <a-asset-item id="gltf-mauer" src="../assets/gltf/berlinmauer.gltf"></a-asset-item>
       </a-assets>
 
       <!-- 3D primitives -->
-      <a-box position="3 0.5 -5" rotation="0 45 0" color="#ffff"></a-box> <!-- src="#marker-image" -->
-      <a-sphere position="1 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="3 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="3" color="#7BC8A4"></a-plane>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="4" color="#7BC8A4"></a-plane>
 
       <!-- Text -->
       <a-text value="Hello, World!" position="1 1.25 -3"></a-text><!-- geometry="primitive:plane" -->
 
-      <!-- Image & Video -->
-      <a-image position="-1 0.75 -3" width="1" height="1.5" src="#marker-image"></a-image>
-      <!--a-video position="0 4 -3" src="#atomic-video" rotation="45 0 0" width="4" height="3"></a-video>-->
-
       <!-- 3D assets -->
-      <a-gltf-model scale="1 1 1" position="-4 0 -5" src="#gltf-cube"></a-gltf-model>
 
-      <!-- Background / Sky -->
-      <a-sky color="#ffffff"></a-sky>
+      <a-gltf-model scale="1 1 1" position="1 -2 -23" rotation="0 -90 0"src="#gltf-mauer"></a-gltf-model>
     </a-scene>
   </body>
 </html>
