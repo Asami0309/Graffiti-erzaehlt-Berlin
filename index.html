@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <script src="../assets/aframe/aframe-v1.2.0.min.js"></script>
+    <script src="../assets/arjs/aframe-ar.js"></script>
+    
+  </head>
+  <body>
+    <a-scene embedded arjs>
+      <!-- Best practice. Preloading assets. -->
+      <a-assets timeout="3000">
+        <a-asset-item id="gltf-cube" src="../assets/gltf/cube.gltf"></a-asset-item>
+        <img id="marker-image" src="../assets/images/marker.png">
+        <a-asset-item id="gltf-mauer" src="../assets/gltf/berlinmauer.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- 3D primitives -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="4" color="#7BC8A4"></a-plane>
+
+      <!-- Text -->
+      <a-text value="Hello, World!" position="1 1.25 -3"></a-text><!-- geometry="primitive:plane" -->
+
+      <!-- 3D assets -->
+
+      <a-gltf-model scale="1 1 1" position="1 -2 -13" rotation="0 -90 0"src="#gltf-mauer"></a-gltf-model>
+    </a-scene>
+  </body>
+</html>
