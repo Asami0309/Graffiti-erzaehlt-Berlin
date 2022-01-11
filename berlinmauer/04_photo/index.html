@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-    <script src="assets/aframe/aframe-v1.2.0.min.js"></script>
-    <script src="assets/arjs/aframe-ar-nft.js"></script>
+    <script src="../assets/aframe/aframe-v1.2.0.min.js"></script>
+    <script src="../assets/arjs/aframe-ar-nft.js"></script>
     <style>
       .arjs-loader {
         height: 100%;
@@ -34,12 +34,12 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-assets timeout="3000">
-        <a-asset-item id="gltf-mauer" src="assets/gltf/berlinmauer.gltf"></a-asset-item>
+        <a-asset-item id="gltf-mauer" src="../assets/gltf/berlinmauer.gltf"></a-asset-item>
       </a-assets>
       <a-nft
         type="nft"
         size="0.5"
-        url="assets/personal/ar-graffiti"
+        url="../assets/personal/ar-graffiti"
         smooth="true"
         smoothCount="5"
         smoothTolerance=".1"
