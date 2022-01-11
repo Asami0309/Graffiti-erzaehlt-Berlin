@@ -34,18 +34,18 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-assets timeout="3000">
-        <img id="marker-image" src="../assets/images/marker.png">
+        <a-asset-item id="gltf-mauer" src="../assets/gltf/berlinmauer.gltf"></a-asset-item>
       </a-assets>
       <a-nft
         type="nft"
-        size="0.2"
+        size="0.5"
         url="assets/personal/ar-graffiti"
         smooth="true"
         smoothCount="5"
         smoothTolerance=".1"
         smoothThreshold="2"
       >
-      <a-image position="-1 0.75 -3" width="1" height="1.5" src="#marker-image"></a-image>
+      <a-gltf-model scale="1 1 1" position="1 -2 -23" rotation="0 -90 0"src="#gltf-mauer"></a-gltf-model>
       </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
